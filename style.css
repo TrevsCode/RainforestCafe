@@ -1,16 +1,18 @@
 body {
     background: url('assets/RainforestBG.png') no-repeat center center/cover, rgba(0, 0, 0, 0.3);
-    background-blend-mode: multiply;
+    background-size: cover; /* Ensure the background image covers the full page */
+    background-attachment: fixed; /* Make the background stay in place while scrolling */
     margin: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure the body takes up the full height of the viewport */
+    min-height: 100vh; /* Ensure body takes up at least the full viewport height */
 }
 
 html, body {
     height: 100%;
     margin: 0;
 }
+
 
 /* Main container should take up remaining space */
 .container {
@@ -33,11 +35,7 @@ html, body {
 #hero-container {
     padding-top: 100px; /* Adjust this value based on your navbar height */
     text-align: center;
-}
-
-/* Remove negative margin to avoid layout issues */
-#hero-container {
-    margin-top: 0;
+    margin-top: -20px; /* Adjust to move closer to the logo */
 }
 
 .navbar ul {
@@ -62,6 +60,26 @@ html, body {
 .navbar ul li a:hover {
     font-size: 17px;
     text-shadow: 5px 6px 7px rgba(2, 5, 7, 0.7);
+}
+
+#reservation {
+    position: absolute; /* Position the button within the navbar */
+    top: 50%; /* Position it in the middle vertically (adjust as needed) */
+    right: 20px; /* Align the button to the right edge */
+    transform: translateY(-50%); /* Centers the button vertically */
+    padding: 10px 20px;
+    background-color: #ff8c00; /* Bright orange for visibility */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* Optional hover effect for button */
+#reservation:hover {
+    background-color: #ff6600; /* Darker orange on hover */
 }
 
 /* Logo adjustments for better responsiveness */
@@ -92,6 +110,7 @@ html, body {
     align-items: center;
     height: auto;
     margin-top: 50px;
+    margin-bottom: 0;
 }
 
 /* Footer styles */
@@ -105,12 +124,114 @@ footer {
     margin-top: auto; /* Pushes the footer to the bottom */
 }
 
+/* Hero text styling */
 #hero-container h1, #hero-container p {
     text-align: center;
     color: white;
     font-weight: bold;
 }
 
-.hero {
-    margin-top: 0;
+#hero-container {
+
+    padding-top: 0px;
+    margin-top: -20px;
+}
+
+/* Menu Section */
+#menu-container {
+    background-color: rgba(224, 235, 65, 0.612);
+    width: 85%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    grid-template-rows: auto auto; /* Adjust row height based on content */
+    grid-gap: 20px; /* Space between grid items */
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 20px
+}
+
+#appetizers, #main-dishes {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 15px;
+    text-spacing-trim: auto;
+
+}
+
+#beverages {
+    grid-column: 1 / span 2; /* Spans both columns */
+    text-align: center;
+}
+
+/* Menu title styling */
+.menutext {
+    grid-column: 1 / span 2; /* Center menu title across both columns */
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    font-family: 'pacifico';
+}
+
+#menu-container p {
+    margin-bottom: 20px;
+}
+
+.dish {
+    margin-bottom: 30px; /* Adds space between each dish */
+    display: flex;
+    flex-direction: column; /* Stacks the image and text vertically */
+    align-items: center; /* Center-aligns the image and text */
+}
+
+#appetizers img {
+    max-width: 100%; /* Ensures the image fits within the container */
+    max-height: 30%;
+    margin-bottom: 10px;
+    border-radius: 60px
+}
+
+/* Base styling for images inside the menu */
+#menu-container img {
+    max-width: 300px;  /* Limits the maximum width of the images */
+    width: 100%;  /* Ensures images scale responsively */
+    height: auto;  /* Maintains aspect ratio */
+    margin-bottom: 20px; /* Adds some space below each image */
+}
+
+/* Optional: Adjust the image size further for larger screens using media queries */
+@media (min-width: 1024px) {
+    #menu-container img {
+        max-width: 250px;  /* Slightly reduce the image size on large screens */
+    }
+}
+
+#main-dishes img {
+    max-width: 100%; /* Ensures the image fits within the container */
+    max-height: 30%;
+    margin-bottom: 10px;
+    border-radius: 60px;
+}
+
+@media (min-width: 1024px) {
+    #main-dishes img {
+        max-width: 250px;
+
+    }
+}
+
+h1, h2 {
+    color: #ffcc00; /* Bright yellow */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Adds depth */
+    font-family: 'Pacifico', cursive; /* Example font for titles */
+
+}
+p {
+    color: #ffffff; /* White for description text */
+    font-family: 'Open Sans', sans-serif; /* Example font for body text */
+}
+
+.socials img:hover {
+    width: 53px;
 }
