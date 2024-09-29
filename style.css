@@ -1,0 +1,116 @@
+body {
+    background: url('assets/RainforestBG.png') no-repeat center center/cover, rgba(0, 0, 0, 0.3);
+    background-blend-mode: multiply;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes up the full height of the viewport */
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Main container should take up remaining space */
+.container {
+    flex: 1;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background: linear-gradient(to left, lightyellow, darkgreen);
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 4px;
+}
+
+/* Add height for fixed navbar so content starts below it */
+#hero-container {
+    padding-top: 100px; /* Adjust this value based on your navbar height */
+    text-align: center;
+}
+
+/* Remove negative margin to avoid layout issues */
+#hero-container {
+    margin-top: 0;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    font-size: 14px;
+    color: yellow;
+    font-weight: bold;
+    text-shadow: 3px 3px 4px rgba(0.5, 0, 0, 0.5);
+}
+
+.navbar ul li a:hover {
+    font-size: 17px;
+    text-shadow: 5px 6px 7px rgba(2, 5, 7, 0.7);
+}
+
+/* Logo adjustments for better responsiveness */
+#rclogo {
+    width: 150px; /* Default logo size */
+    height: auto;
+    border-radius: 58px;
+    max-width: 100%; /* Ensures it doesn’t go beyond container width */
+}
+
+/* Responsive logo size */
+@media (min-width: 768px) {
+    #rclogo {
+        width: 200px; /* Adjust logo size for larger screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    #rclogo {
+        width: 250px; /* Smaller logo on larger screens */
+    }
+}
+
+.logo {
+    justify-content: center;
+    display: flex;
+    z-index: 150;
+    align-items: center;
+    height: auto;
+    margin-top: 50px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+    margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+#hero-container h1, #hero-container p {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.hero {
+    margin-top: 0;
+}
